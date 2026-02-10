@@ -1,12 +1,306 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Cole’s Tree Service</title>
-  </head>
-  <body style="font-family: system-ui; padding: 24px;">
-    <h1>Cole’s Tree Service</h1>
-    <p>Website is being set up. Call <a href="tel:+15634513479">563-451-3479</a> or email <a href="mailto:mjcoletreeservice@gmail.com">mjcoletreeservice@gmail.com</a>.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cole’s Tree Service | Free Estimates | Licensed & Insured</title>
+  <meta name="description" content="Cole’s Tree Service — tree removal, trimming, stump grinding, land clearing, brush mowing, and commercial snow removal. Serving Dubuque & Delaware County Iowa and Jo Daviess County Illinois. Free estimates. Licensed & insured." />
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#121212;
+      --text:#f5f5f5;
+      --muted:#bdbdbd;
+      --gold:#d6b25e;
+      --gold2:#b8902f;
+      --line:#242424;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(214,178,94,.20), transparent 60%),
+                  radial-gradient(900px 500px at 20% 110%, rgba(214,178,94,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .topbar .wrap{
+      display:flex;flex-wrap:wrap;gap:10px;
+      align-items:center;justify-content:space-between;
+      padding:10px 16px;font-size:14px;color:var(--muted);
+    }
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03)}
+    header{
+      position:sticky;top:0;z-index:50;
+      border-bottom:1px solid var(--line);
+      background:rgba(10,10,10,.65);
+      backdrop-filter: blur(10px);
+    }
+    header .wrap{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logoBox{
+      width:44px;height:44px;border-radius:14px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(214,178,94,.20), rgba(255,255,255,.03));
+      display:grid;place-items:center;
+      box-shadow: var(--shadow);
+      color:var(--gold);
+      font-weight:800;
+    }
+    .brand b{display:block;font-size:16px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    nav{display:none;gap:18px;font-size:14px;color:var(--muted)}
+    nav a{text-decoration:none}
+    nav a:hover{color:var(--text);text-decoration:underline}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      text-decoration:none;font-weight:700;
+    }
+    .btn:hover{filter:brightness(1.1)}
+    .btn.primary{
+      background:linear-gradient(180deg,var(--gold),var(--gold2));
+      color:#0b0b0b;border:none;
+      box-shadow: 0 10px 25px rgba(214,178,94,.25);
+    }
+    .hero{padding:48px 0 20px}
+    .heroGrid{display:grid;gap:18px}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.03);
+      color:var(--muted);font-size:14px;
+      width:fit-content;
+    }
+    h1{margin:14px 0 10px;font-size:40px;line-height:1.1}
+    p.lead{margin:0;color:var(--muted);font-size:18px;max-width:700px}
+    .cards{display:grid;gap:14px;margin-top:20px}
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .grid3{display:grid;gap:14px}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .section{padding:44px 0}
+    .section h2{margin:0 0 10px;font-size:28px}
+    .section .sub{margin:0 0 18px;color:var(--muted)}
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    ul.clean li{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+    .footGrid{display:grid;gap:16px}
+    .muted{color:var(--muted)}
+    @media(min-width:860px){
+      nav{display:flex}
+      .heroGrid{grid-template-columns: 1.2fr .8fr;align-items:start}
+      .grid3{grid-template-columns: repeat(3, 1fr)}
+      .cards{grid-template-columns: repeat(2, 1fr)}
+      .footGrid{grid-template-columns: 1.2fr .8fr 1fr}
+      h1{font-size:52px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="pill">📞 <a href="tel:+15634513479">563-451-3479</a></div>
+      <div class="pill">✉️ <a href="mailto:mjcoletreeservice@gmail.com">mjcoletreeservice@gmail.com</a></div>
+      <div class="pill">✅ Licensed & Insured</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Cole’s Tree Service">
+        <div class="logoBox">CTS</div>
+        <div>
+          <b>Cole’s Tree Service</b>
+          <span>Tree care • Clearing • Commercial snow</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#areas">Service Area</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="tel:+15634513479">Call</a>
+        <a class="btn primary" href="#contact">Get a free estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker">⭐ Free estimates • Licensed & insured • Residential & commercial</div>
+          <h1>Safe, reliable tree work — from trimming to full removal</h1>
+          <p class="lead">
+            Serving Dubuque County IA, Delaware County IA, and Jo Daviess County IL.
+            Fast response, professional equipment, and clean job sites.
+          </p>
+          <div class="ctaRow">
+            <a class="btn primary" href="tel:+15634513479">Call 563-451-3479</a>
+            <a class="btn" href="mailto:mjcoletreeservice@gmail.com?subject=Free%20Estimate%20Request%20%E2%80%94%20Cole%E2%80%99s%20Tree%20Service">Email for an estimate</a>
+          </div>
+          <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
+            <span class="tag">Tree removal</span>
+            <span class="tag">Trimming</span>
+            <span class="tag">Stump grinding</span>
+            <span class="tag">Land clearing</span>
+            <span class="tag">Brush mowing</span>
+            <span class="tag">Commercial snow</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quick estimate checklist</h3>
+          <p class="muted">Include these details and we’ll quote faster:</p>
+          <ul class="clean" style="margin-top:14px">
+            <li>✅ Address or nearest cross-street</li>
+            <li>✅ What service you need</li>
+            <li>✅ Access issues (fences, power lines, tight areas)</li>
+            <li>✅ Preferred timeframe</li>
+          </ul>
+          <div style="margin-top:14px" class="muted">
+            Tip: If it’s safe, a few photos help speed things up.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p class="sub">Tree services, clearing, and commercial snow removal.</p>
+
+      <div class="grid3">
+        <div class="card"><h3>Tree removal</h3><p>Hazard trees, storm damage, full take-downs.</p></div>
+        <div class="card"><h3>Tree trimming</h3><p>Pruning for safety, clearance, and healthy growth.</p></div>
+        <div class="card"><h3>Stump grinding</h3><p>Remove stumps cleanly and reclaim usable space.</p></div>
+        <div class="card"><h3>Land clearing</h3><p>Clear lots, fields, and sites for new use.</p></div>
+        <div class="card"><h3>Fence line clearing</h3><p>Open up fence rows and improve access.</p></div>
+        <div class="card"><h3>Row clearing</h3><p>Right-of-way and row maintenance.</p></div>
+        <div class="card"><h3>Brush mowing</h3><p>Efficient cleanup of overgrowth and brush.</p></div>
+        <div class="card"><h3>Brush chipping</h3><p>On-site chipping to reduce hauling and cleanup.</p></div>
+        <div class="card"><h3>Commercial snow removal</h3><p>Reliable plowing and snow management.</p></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>Free estimates</h3>
+        <p>Call or email anytime — we’ll schedule a time to look at the job and get you a clear quote.</p>
+        <div class="ctaRow">
+          <a class="btn primary" href="tel:+15634513479">Call now</a>
+          <a class="btn" href="#contact">Request estimate</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section">
+      <h2>Service area</h2>
+      <p class="sub">Proudly serving the Tri-State area.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Counties we serve</h3>
+          <ul class="clean" style="margin-top:12px">
+            <li>📍 Dubuque County, Iowa</li>
+            <li>📍 Delaware County, Iowa</li>
+            <li>📍 Jo Daviess County, Illinois</li>
+          </ul>
+          <p style="margin-top:12px" class="muted">Outside these counties? Reach out — we may still be able to help.</p>
+        </div>
+        <div class="card">
+          <h3>Licensed & insured</h3>
+          <p>Safety-first work with professional equipment and proper procedures on every job.</p>
+          <p style="margin-top:12px" class="muted">We work clean and leave your property tidy when we’re done.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p class="sub">Professional work with safety first.</p>
+      <div class="grid3">
+        <div class="card"><h3>Safety-focused</h3><p>Careful planning and proper equipment on every job.</p></div>
+        <div class="card"><h3>Clean job sites</h3><p>Efficient work and cleanup you’ll appreciate.</p></div>
+        <div class="card"><h3>Straightforward quotes</h3><p>Clear pricing and honest recommendations.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="sub">Request a free estimate.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Call or email</h3>
+          <p class="muted">Fastest way to reach us:</p>
+          <div class="ctaRow">
+            <a class="btn primary" href="tel:+15634513479">📞 563-451-3479</a>
+            <a class="btn" href="mailto:mjcoletreeservice@gmail.com?subject=Free%20Estimate%20Request%20%E2%80%94%20Cole%E2%80%99s%20Tree%20Service">✉️ mjcoletreeservice@gmail.com</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Estimate info to include</h3>
+          <ul class="clean" style="margin-top:12px">
+            <li>✅ Name + best callback number</li>
+            <li>✅ Address of the job</li>
+            <li>✅ Service needed</li>
+            <li>✅ Any access concerns</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footGrid">
+        <div>
+          <b style="color:var(--text)">Cole’s Tree Service</b>
+          <div class="muted" style="margin-top:6px">Tree removal • Trimming • Stump grinding • Clearing • Commercial snow</div>
+          <div class="muted" style="margin-top:10px">📞 <a href="tel:+15634513479">563-451-3479</a> • ✉️ <a href="mailto:mjcoletreeservice@gmail.com">mjcoletreeservice@gmail.com</a></div>
+        </div>
+        <div>
+          <b style="color:var(--text)">Service area</b>
+          <div class="muted" style="margin-top:8px">Dubuque County IA</div>
+          <div class="muted">Delaware County IA</div>
+          <div class="muted">Jo Daviess County IL</div>
+        </div>
+        <div>
+          <b style="color:var(--text)">Free estimates</b>
+          <div class="muted" style="margin-top:8px">Licensed & insured</div>
+          <div class="muted">Residential & commercial</div>
+        </div>
+      </div>
+      <div class="muted" style="margin-top:18px">© <span id="y"></span> Cole’s Tree Service. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
